@@ -7,17 +7,18 @@ class Status extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        fit: StackFit.loose,
         children: [
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.black,
-          ),
-          const Positioned(
-            top: 10,
-            left: 10,
-            child: Icon(Icons.person, color: Color(0xFF008069),),
-          ),
+          // Container(
+          //   height: 500,
+          //   width: 400,
+          //   color: Colors.amber,
+          // ),
+          Image.asset("images/2.jpg"),
+        const  Align(
+            alignment: Alignment.center,
+            child: Text("hello", style: TextStyle(color: Colors.white),),
+          )
         ],
       ),
     );

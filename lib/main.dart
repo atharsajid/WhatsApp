@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/status.dart';
 import 'package:whatsapp/widget.dart';
 import 'widget.dart';
 import 'chat.dart';
-import 'status.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
             appBar: appbar1(),
             body: TabBarView(children: [
               loops(),
-             const Status(),
+          const Status(),
               Container(
                 color: Colors.black,
               ),

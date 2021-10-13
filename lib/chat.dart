@@ -59,21 +59,27 @@ Widget loops() {
 
   return Scaffold(
       body: SingleChildScrollView(
-    child: Column(
+    child: Stack(
       children: <Widget>[
-        for (var a = img.length - 1; a >= 0; a--)
-          Column(
-            children: [listtile(img[a], nam[a], msg[a])],
+        Container(
+          child: Column(
+            children: [
+              for (var a = img.length - 1; a >= 0; a--)
+                Column(
+                  children: [listtile(img[a], nam[a], msg[a])],
+                ),
+            ],
           ),
+        ),
         Positioned(
-          bottom: 100,
-          right: 100,
+          top: 550,
+          right: 10,
           child: FloatingActionButton(
             onPressed: () {},
             child: const Icon(Icons.chat),
             backgroundColor: const Color(0xFF008069),
           ),
-        )
+        ),
       ],
     ),
   ));
