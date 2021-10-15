@@ -17,33 +17,8 @@ appbar1() {
         onPressed: () {},
         icon: const Icon(Icons.search),
       ),
-      
-      PopupMenuButton<String>(
-          onSelected: (value) {},
-          itemBuilder: (BuildContext context) {
-            return [
-              const PopupMenuItem(
-                child: Text("New Group"),
-                value: "New Group",
-              ),
-              const PopupMenuItem(
-                child: Text("New Broadcast"),
-                value: "New Broadcast",
-              ),
-              const PopupMenuItem(
-                child: Text("Linked devices"),
-                value: "Linked devices",
-              ),
-              const PopupMenuItem(
-                child: Text("Starred devices"),
-                value: "Starred devices",
-              ),
-              const PopupMenuItem(
-                child: Text("Settings"),
-                value: "Settings",
-              ),
-            ];
-          })
+      popup("New Group", "New brodcast", "Linked devices", "Starred Messages",
+          "Settings"),
     ],
     bottom: tabbar(),
   );
@@ -95,3 +70,62 @@ Widget listtile(String image, String name, String msg) {
     ),
   ));
 }
+
+Widget popup(
+    String menu1, String menu2, String menu3, String menu4, String menu5) {
+  return PopupMenuButton<String>(
+    onSelected: (value) {},
+    itemBuilder: (BuildContext context) {
+      return [
+        PopupMenuItem(
+          child: Text(menu1),
+          value: menu1,
+        ),
+        PopupMenuItem(
+          child: Text(menu2),
+          value: menu2,
+        ),
+        PopupMenuItem(
+          child: Text(menu3),
+          value: menu3,
+        ),
+        PopupMenuItem(
+          child: Text(menu4),
+          value: menu4,
+        ),
+        PopupMenuItem(
+          child: Text(menu5),
+          value: menu5,
+        ),
+      ];
+    },
+  );
+}
+
+Widget msgbtn(var context, var route) {
+  return Positioned(
+    top: 550,
+    right: 10,
+    child: FloatingActionButton(
+      onPressed: () {
+        Navigator.of(context).pushNamed(route);
+      },
+      child: const Icon(Icons.chat),
+      backgroundColor: const Color(0xFF008069),
+    ),
+  );
+}
+
+// Widget bckbtn(var conte, var rou) {
+//   return Positioned(
+//     top: 598,
+//     right: 10,
+//     child: FloatingActionButton(
+//       onPressed: () {
+//         Navigator.of(conte).pushNamed(rou);
+//       },
+//       child: const Icon(Icons.arrow_back_ios_new),
+//       backgroundColor: const Color(0xFF008069),
+//     ),
+//   );
+// }
