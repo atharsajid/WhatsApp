@@ -56,7 +56,7 @@ class _LopState extends State<Lop> {
       "Alisha",
       "+923322514588",
       "Friends Forever",
-      "Owais",
+      "Muhammad Athar",
     ];
     const msg = [
       "Where are you?",
